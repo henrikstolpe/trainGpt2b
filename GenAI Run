@@ -1,0 +1,32 @@
+comfy UI
+
+python3 -m venv comfyui-env
+source comfyui-env/bin/activate
+~/ComfyUI$ python main.py --listen 0.0.0.0
+
+
+Ollampa gpt:
+
+~$ ollama run gpt-oss:120b
+
+
+My training setup:
+docker ps
+docker pull nvcr.io/nvidia/pytorch:25.11-py3
+docker run --gpus all -it --rm --ipc=host \
+-v $HOME/.cache/huggingface:/root/.cache/huggingface \
+-v ${PWD}:/workspace -w /workspace \
+nvcr.io/nvidia/pytorch:25.11-py3
+
+in the workspace:
+pip install transformers peft datasets trl bitsandbytes
+
+
+
+
+
+
+
+
+
+
